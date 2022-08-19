@@ -151,13 +151,15 @@ def convert(Nums):
 #except the user input and resolve the simple conversions first
 def numbers():
     N = input('Please input a real number in words up to vigintillion: ')
+    N = N.lower()
     if ' ' in N:
         tmp = N.split(' ')
         convert(tmp)
-    elif N.lower() in DBBaseDict.keys():
+    elif N in DBBaseDict.keys():
         print(DBBaseDict[N])
-    elif N.lower() in DBExtDic.keys():
+    elif N in DBExtDic.keys():
         print(DBExtDic[N])
     else:
         print('Oh, you typed an incorrect number please try again.')
 numbers()
+
